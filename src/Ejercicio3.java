@@ -6,22 +6,20 @@ public class Ejercicio3 {
         System.out.println("Introduce un numero: ");
         String digitos = sc.next();
         String suma_total = sumaDigitos(digitos);
-
-        for(int i = 0; i < digitos.length(); i++) {
-            int numero = Integer.parseInt("" + digitos.charAt(i));
-            if (i<digitos.length()-1) {
-                System.out.print(numero + " + ");
-            }else {
-                System.out.print(numero + " = " + suma_total);
-            }
-        }
     }
-    public static String sumaDigitos(String digitos){
+    public static String sumaDigitos(String digitos) {
         int suma = 0;
-        for(int i = 0; i < digitos.length(); i++){
+        String resultado = "";
+        for (int i = 0; i < digitos.length(); i++) {
             int numero = Integer.parseInt("" + digitos.charAt(i));
             suma = suma + numero;
+            resultado = resultado + numero;
+
+            if (i < digitos.length() - 1) {
+                resultado = resultado + " + ";
+            }
         }
-        return String.valueOf(suma);
+        resultado = resultado + " = " + suma;
+        return resultado;
     }
 }
